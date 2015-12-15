@@ -1,0 +1,96 @@
+
+<!DOCTYPE html>
+
+<html lang="fr">
+  <meta charset="UTF-8">
+ 	 <title>Formulaire</title>
+ 	   <link rel="stylesheet" href="index.css">
+ 	   <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>    
+
+
+<head>
+	<div id="haut">
+		<img src ="http://www.charles-peguy.fr/IMG/png/banniere_1-3.png"/>
+			 <ul class="naviga">
+ 				 <li><a href="#" title="Aller à la page 1">Menu</a></li>
+ 				 <br>
+ 				 <li class="toggleSubMenu"><span>Javascript</span>
+   					 <ul class="subMenu">
+   						   <li><a href="#" title="ajout 1">Comment ajouter une image</a></li>
+  	  						  <li><a href="#" title="ajout 2">Comment ajouter un lecteur audio</a></li>
+   								   <li><a href="#" title="ajout 3">comment ajouter je sais pas</a></li>
+   			 </ul>
+   				 </li>
+	</div>
+ </head>
+
+<body>
+
+<div class="slideshow">
+	<ul>
+
+        <li><img src="001.jpg" alt="" width="550" height="200" /></li>
+		<li><img src="002.jpg" alt="" width="550" height="200" /></li>
+		<li><img src="003.jpg" alt="" width="550" height="200" /></li>
+		<li><img src="004.jpg" alt="" width="550" height="200" /></li>
+   	    <li><img src="005.jpg" alt="" width="550" height="200" /></li>
+    
+        
+    </ul>
+</div>
+
+  </body>
+
+
+
+
+
+
+
+<footer>
+
+<script type="text/javascript">
+   $(function(){
+      setInterval(function(){
+         $(".slideshow ul").animate({marginLeft:-550},800,function(){
+            $(this).css({marginLeft:0}).find("li:last").after($(this).find("li:first"));
+         })
+      }, 3900);
+   });
+
+   </script>
+
+
+
+<script type="text/javascript">
+$(document).ready( function () {
+    $(".naviga ul.subMenu").hide();
+    $(".naviga li.toggleSubMenu span").each( function () {
+
+        var TexteSpan = $(this).text();
+        $(this).replaceWith('<a href="" title="Afficher le sous-menu">' + TexteSpan + '<\/a>') ;
+    	} ) ;
+
+
+    $(".naviga li.toggleSubMenu > a").click( function () {
+
+        if ($(this).next("ul.subMenu:visible").length != 0) {
+            $(this).next("ul.subMenu").slideUp("normal");
+      														  }
+        // Si le sous-menu est caché, on ferme les autres et on l'affiche :
+        else {
+            $(".naviga ul.subMenu").slideUp("normal");
+            $(this).next("ul.subMenu").slideDown("normal");
+        }
+        // On empêche le navigateur de suivre le lien :
+        return false;
+    });    
+
+
+} ) ;
+</script>     
+   
+</footer>
+
+
+  </html>

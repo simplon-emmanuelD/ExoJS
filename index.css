@@ -1,0 +1,61 @@
+#haut {
+text-align: center;
+}
+
+#haut img {
+
+height: 200px;
+
+}
+
+html{
+background-color: #F2F1F0;
+
+}
+
+{
+
+
+	margin-top: -50px;
+	margin-left: 660px;
+	text-decoration: none;
+	color: blue;
+}
+
+
+
+.slideshow {
+   width: 550px;
+   height: 200px;
+   overflow: hidden;
+   border: 3px solid #F2F2F2;
+    margin-left:18%;
+}
+
+.slideshow ul {
+   width: 500%;
+   height: 200px;
+   padding:0; margin:0;
+   list-style: none;
+}
+
+#logo{
+   float: left;
+    margin-left: 230px;
+    margin-top: 20px;
+
+}
+
+#logo2{
+    float: right;
+    margin-right: 5em;
+    margin-top: -75px;
+
+    
+    
+    
+}
+
+.slideshow li {
+   float: left;
+}
