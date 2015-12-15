@@ -59,3 +59,11 @@ background-color: #F2F1F0;
 .slideshow li {
    float: left;
 }
+
+/* fin du slideshow*/
+
+#bas{
+height: 60px;
+background-color: #F0FFFF;
+color:red;
+}
