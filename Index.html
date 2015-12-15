@@ -10,17 +10,27 @@
 
 <head>
 	<div id="haut">
-		<img src ="http://www.charles-peguy.fr/IMG/png/banniere_1-3.png"/>
-			 <ul class="naviga">
- 				 <li><a href="#" title="Aller à la page 1">Menu</a></li>
- 				 <br>
- 				 <li class="toggleSubMenu"><span>Javascript</span>
-   					 <ul class="subMenu">
-   						   <li><a href="#" title="ajout 1">Comment ajouter une image</a></li>
-  	  						  <li><a href="#" title="ajout 2">Comment ajouter un lecteur audio</a></li>
-   								   <li><a href="#" title="ajout 3">comment ajouter je sais pas</a></li>
-   			 </ul>
-   				 </li>
+			<ul id="jsddm">
+    <li><a href="#">JavaScript</a>
+        <ul>
+            <li><a href="#">Rajouter une image</a></li>
+            <li><a href="#">faire défiler des images</a></li>
+            <li><a href="#">function</a></li>
+        </ul>
+    </li>
+    <li><a href="#">Html</a>
+        <ul>
+            <li><a href="#">rajouter un lien</a></li>
+            <li><a href="#">rajouter une image</a></li>
+            <li><a href="#">rajouter</a></li>
+            <li><a href="#">sais plus quoi dire</a></li>
+            <li><a href="#">blablkablablablablabl</a></li>
+        </ul>
+    </li>
+    <li><a href="#">Navigation</a></li>
+    <li><a href="#">HTML/CSS</a></li>
+    <li><a href="#">Help</a></li>
+</ul>
 	</div>
  </head>
 
@@ -63,40 +73,42 @@
 
 
 <script type="text/javascript">
-$(document).ready( function () {
-    $(".naviga ul.subMenu").hide();
-    $(".naviga li.toggleSubMenu span").each( function () {
+var timeout    = 500;
+var closetimer = 0;
+var ddmenuitem = 0;
 
-        var TexteSpan = $(this).text();
-        $(this).replaceWith('<a href="" title="Afficher le sous-menu">' + TexteSpan + '<\/a>') ;
-    	} ) ;
+function jsddm_open()
+{  jsddm_canceltimer();
+   jsddm_close();
+   ddmenuitem = $(this).find('ul').css('visibility', 'visible');}
 
+function jsddm_close()
+{  if(ddmenuitem) ddmenuitem.css('visibility', 'hidden');}
 
-    $(".naviga li.toggleSubMenu > a").click( function () {
+function jsddm_timer()
+{  closetimer = window.setTimeout(jsddm_close, timeout);}
 
-        if ($(this).next("ul.subMenu:visible").length != 0) {
-            $(this).next("ul.subMenu").slideUp("normal");
-      														  }
-        // Si le sous-menu est caché, on ferme les autres et on l'affiche :
-        else {
-            $(".naviga ul.subMenu").slideUp("normal");
-            $(this).next("ul.subMenu").slideDown("normal");
-        }
-        // On empêche le navigateur de suivre le lien :
-        return false;
-    });    
+function jsddm_canceltimer()
+{  if(closetimer)
+   {  window.clearTimeout(closetimer);
+      closetimer = null;}}
 
+$(document).ready(function()
+{  $('#jsddm > li').bind('mouseover', jsddm_open)
+   $('#jsddm > li').bind('mouseout',  jsddm_timer)});
 
-} ) ;
+document.onclick = jsddm_close;
 </script>     
-   
+     <div id="bas">
 
-
-   <div id="bas">
-   <p style="display:inline;"> 15 decembre 2056</p>
-   <br>
-<p style="display:inline;">menu inutile bientot </p>
 <p style="float:right;"> 11100 Narbonne </p>
+<p style="float:left;"> 15 decembre 2056</p>
+   <br>
+  
+   <br>
+
+
+
 
    </div>
 </footer>

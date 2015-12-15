@@ -2,10 +2,11 @@
 text-align: center;
 }
 
-#haut img {
-
-height: 200px;
-
+#haut {
+background-image: url("http://www.crystalxp.net/_design/img/v2/baniere-fond.jpg");
+height: 210px;
+background-repeat: no-repeat;
+margin-left: 10%;
 }
 
 html{
@@ -13,15 +14,46 @@ background-color: #F2F1F0;
 
 }
 
-{
 
+#jsddm
+{	margin: 0;
+	padding: 0}
+	
+	#jsddm li
+	{	float: left;
+		list-style: none;
+		font: 12px Tahoma, Arial}
 
-	margin-top: -50px;
-	margin-left: 660px;
-	text-decoration: none;
-	color: blue;
-}
+	#jsddm li a
+	{	display: block;
+		background: #20548E;
+		padding: 5px 12px;
+		text-decoration: none;
+		border-right: 1px solid white;
+		width: 70px;
+		color: #EAFFED;
+		white-space: nowrap}
 
+	#jsddm li a:hover
+	{	background: #1A4473}
+		
+		#jsddm li ul
+		{	margin: 0;
+			padding: 0;
+			position: absolute;
+			visibility: hidden;
+			border-top: 1px solid white}
+		
+		#jsddm li ul li
+		{	float: none;
+			display: inline}
+		
+		#jsddm li ul li a
+		{	width: auto;
+			background: #9F1B1B}
+		
+		#jsddm li ul li a:hover
+		{	background: #7F1616}
 
 
 .slideshow {
@@ -38,23 +70,7 @@ background-color: #F2F1F0;
    padding:0; margin:0;
    list-style: none;
 }
-
-#logo{
-   float: left;
-    margin-left: 230px;
-    margin-top: 20px;
-
-}
-
-#logo2{
-    float: right;
-    margin-right: 5em;
-    margin-top: -75px;
-
-    
-    
-    
-}
+   
 
 .slideshow li {
    float: left;
@@ -63,6 +79,7 @@ background-color: #F2F1F0;
 /* fin du slideshow*/
 
 #bas{
+margin-top: 70px;
 height: 60px;
 background-color: #F0FFFF;
 color:red;
